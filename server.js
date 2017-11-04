@@ -38,6 +38,26 @@ app.get('/restaurants', (req, res) => {
     });
 });
 
+//GET requests to /restaurants with query filters
+/*app.get('/restaurants', (req, res) => {
+    const filters = {};
+    const queryableFields = ['cuisine', 'borough'];
+    queryableFields.forEach(field => {
+        if (req.query[field]) {
+            filters[field] = req.query[field];
+        }
+    });
+    Restaurant
+        .find(filters)
+        .then(Restaurants => res.json(
+            Restaurants.map(restaurant => restaurant.apiRepr())
+        ))
+        .catch(err => {
+            console.error(err);
+            res.status(500).json({message: 'Internal server error'})
+        });
+});*/
+
 // can also request by ID
 app.get('/restaurants/:id', (req, res) => {
   Restaurant
