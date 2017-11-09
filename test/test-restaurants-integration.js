@@ -158,7 +158,7 @@ describe('Restaurants API resource', function() {
           resRestaurant.name.should.equal(restaurant.name);
           resRestaurant.cuisine.should.equal(restaurant.cuisine);
           resRestaurant.borough.should.equal(restaurant.borough);
-          resRestaurant.address.should.contain(restaurant.address.building);
+          resRestaurant.address.should.equal(restaurant.addressString);
 
           resRestaurant.grade.should.equal(restaurant.grade);
         });
